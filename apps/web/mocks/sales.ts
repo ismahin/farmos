@@ -1,0 +1,115 @@
+import { Customer, Invoice, SalesOrder } from "../types";
+
+export const mockCustomers: Customer[] = [
+  {
+    id: "cust-001",
+    name: "Apex Poultry Processors Ltd.",
+    code: "CUST-APX-01",
+    contactPerson: "Bernard Odhiambo",
+    email: "procurement@apexprocessors.com",
+    phone: "+254 720 333 444",
+    type: "WHOLESALER",
+    outstandingBalance: 12400,
+    creditLimit: 50000,
+    currency: "USD",
+  },
+  {
+    id: "cust-002",
+    name: "Green Grocers Supermarkets",
+    code: "CUST-GGS-02",
+    contactPerson: "Grace Mutua",
+    email: "buyer.fresh@greengrocers.co.ke",
+    phone: "+254 734 555 666",
+    type: "SUPERMARKET",
+    outstandingBalance: 4200,
+    creditLimit: 20000,
+    currency: "USD",
+  },
+  {
+    id: "cust-003",
+    name: "Safari Hotel & Lodges Group",
+    code: "CUST-SHL-03",
+    contactPerson: "Chef Wilson Rotich",
+    email: "supplies@safarihotels.com",
+    phone: "+254 712 777 888",
+    type: "INSTITUTIONAL",
+    outstandingBalance: 0,
+    creditLimit: 15000,
+    currency: "USD",
+  },
+];
+
+export const mockSalesOrders: SalesOrder[] = [
+  {
+    id: "so-301",
+    orderNumber: "SO-2026-0301",
+    customerId: "cust-001",
+    customerName: "Apex Poultry Processors Ltd.",
+    orderDate: "2026-09-18",
+    deliveryDate: "2026-09-29",
+    status: "ALLOCATED",
+    totalAmount: 42512,
+    currency: "USD",
+    shippingAddress: "Apex Processing Plant, Thika Industrial Area",
+    items: [
+      {
+        id: "sol-01",
+        productDescription: "Live Broiler Birds (Target 2.45 kg liveweight)",
+        quantity: 9640,
+        uom: "birds",
+        unitPrice: 4.41,
+        lineTotal: 42512.4,
+      },
+    ],
+  },
+  {
+    id: "so-302",
+    orderNumber: "SO-2026-0302",
+    customerId: "cust-002",
+    customerName: "Green Grocers Supermarkets",
+    orderDate: "2026-09-21",
+    deliveryDate: "2026-10-06",
+    status: "CONFIRMED",
+    totalAmount: 21500,
+    currency: "USD",
+    shippingAddress: "Central Distribution Depot, Nairobi West",
+    items: [
+      {
+        id: "sol-02",
+        productDescription: "Live Broiler Birds (Target 2.40 kg liveweight)",
+        quantity: 5000,
+        uom: "birds",
+        unitPrice: 4.3,
+        lineTotal: 21500,
+      },
+    ],
+  },
+];
+
+export const mockInvoices: Invoice[] = [
+  {
+    id: "inv-201",
+    invoiceNumber: "INV-2026-0201",
+    salesOrderId: "so-280",
+    customerName: "Apex Poultry Processors Ltd.",
+    issueDate: "2026-08-15",
+    dueDate: "2026-09-15",
+    totalAmount: 41800,
+    paidAmount: 29400,
+    status: "PARTIALLY_PAID",
+    currency: "USD",
+  },
+  {
+    id: "inv-202",
+    invoiceNumber: "INV-2026-0202",
+    salesOrderId: "so-285",
+    customerName: "Green Grocers Supermarkets",
+    issueDate: "2026-08-28",
+    dueDate: "2026-09-28",
+    totalAmount: 4200,
+    paidAmount: 0,
+    status: "UNPAID",
+    currency: "USD",
+  },
+];
+
